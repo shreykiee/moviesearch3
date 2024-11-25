@@ -13,18 +13,18 @@ class SearchScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            title: Center(child: Text('Search')),
             floating: true,
             pinned: true,
             expandedHeight: 120,
             flexibleSpace: FlexibleSpaceBar(
               title: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: TextField(
                   onChanged: (value) {
                     context.read<MovieProvider>().searchMoviesAndActors(value);
                   },
                   decoration: InputDecoration(
-                    hintText: 'Search movies or actors...',
                     filled: true,
                     fillColor: Theme.of(context).colorScheme.surface,
                     border: OutlineInputBorder(

@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.light(
                 primary: Colors.indigo,
                 secondary: Colors.pinkAccent,
-                background: Colors.grey[50]!,
+                surface: Colors.grey[50]!,
               ),
               textTheme: GoogleFonts.poppinsTextTheme(),
             ),
@@ -39,12 +39,14 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.dark(
                 primary: Colors.indigoAccent,
                 secondary: Colors.pinkAccent,
-                background: Colors.grey[900]!,
+                surface: Colors.grey[900]!,
               ),
-              textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
+              textTheme:
+                  GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
             ),
             themeMode: themeProvider.themeMode,
             home: const HomeScreen(),
+            debugShowCheckedModeBanner: false,
           );
         },
       ),
