@@ -77,18 +77,19 @@ class _ActorDetailsScreenState extends State<ActorDetailsScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
+                            'Filmography',
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                          const SizedBox(height: 26),
+                          MovieList(movies: details['movies'] ?? []),
+                          const SizedBox(height: 26),
+                          Text(
                             'Biography',
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           const SizedBox(height: 8),
-                          Text(details['biography'] ?? 'No biography available'),
-                          const SizedBox(height: 16),
                           Text(
-                            'Filmography',
-                            style: Theme.of(context).textTheme.titleLarge,
-                          ),
-                          const SizedBox(height: 8),
-                          MovieList(movies: details['movies'] ?? []),
+                              details['biography'] ?? 'No biography available'),
                         ],
                       );
                     },
