@@ -270,8 +270,9 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
       child: Card(
         elevation: 4.0, // Adds shadow effect to make it look like a card
         color: isDarkMode
-            ? Colors.black54
-            : Colors.white, // Card color based on theme
+            ? const Color.fromARGB(158, 34, 36, 46)
+            : const Color.fromARGB(
+                255, 237, 242, 250), // Card color based on theme
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0), // Rounded corners
         ),

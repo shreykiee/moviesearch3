@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:movie_search_app/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
 import '../providers/movie_provider.dart';
@@ -11,7 +12,8 @@ class MovieGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Movie Search'),
+        centerTitle: true, // Center the AppBar title
+        title: const Text('Search History'),
         actions: [
           IconButton(
             icon: const Icon(Icons.brightness_6),
@@ -24,8 +26,28 @@ class MovieGrid extends StatelessWidget {
       body: Consumer<MovieProvider>(
         builder: (context, movieProvider, child) {
           if (movieProvider.movies.isEmpty) {
-            return const Center(
-              child: Text('Search for movies'),
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Lottie animation
+                  SizedBox(
+                    height: 200,
+                    child: Lottie.asset(
+                        'assets/animations/Animation - 1732546509473.json'),
+                  ),
+                  const SizedBox(height: 20),
+                  // Placeholder text
+                  const Text(
+                    'Search for movies',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.grey,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             );
           }
 
